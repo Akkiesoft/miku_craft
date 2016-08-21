@@ -14,11 +14,20 @@ Plugin.create :minecraft do
       mc_stderr.each do |res|
         Plugin.call(:server_raw_output, :stderr, res) end end
 
+    Plugin.call(:minute)
+
     Thread.new {
       wait_thr.join
       [stdout_thread, stderr_thread].map(&:kill)
       [mc_stdin, mc_stdout, mc_stderr].map(&:close)
       Delayer.new{ exit 0 }
+    }
+  end
+
+  on_minute do
+    Thread.new {
+      sleep 60
+      Plugin.call(:minute)
     }
   end
 
@@ -28,6 +37,18 @@ Plugin.create :minecraft do
 
   on_minecraft_give_item do |user_name, item_name, count|
     Plugin.call :minecraft_run_command, "give #{user_name} #{item_name} #{count}"
+  end
+
+  on_minecraft_save_off do
+    Plugin.call :minecraft_run_command, "save-off"
+  end
+
+  on_minecraft_save_on do
+    Plugin.call :minecraft_run_command, "save-on"
+  end
+
+  on_minecraft_say do |message|
+    Plugin.call :minecraft_run_command, "say #{message}"
   end
 
   on_minecraft_tell do |user_name, message|
@@ -47,6 +68,8 @@ Plugin.create :minecraft do
       Plugin.call(:left_player, $1)
     when %r<\A\[\d{2}:\d{2}:\d{2}\] \[Server thread/INFO\]: (\w+) fell from a high place\Z>
       Plugin.call(:die, $1)
+    when %r<\A\[\d{2}:\d{2}:\d{2}\] \[Server thread/INFO\]: <(\w+)> update map\Z>
+      Plugin.call(:update_map, $1)
     end
   end
 
