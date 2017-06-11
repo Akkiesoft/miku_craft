@@ -6,7 +6,10 @@
 /minecraft_server.jar
 /ops.json
 /server.properties
+/server-icon.png
 /usercache.json
 /vendor/
 /whitelist.json
 /plugin/count.dat
+/plugin/backup.rb
+/EjectCraft/
