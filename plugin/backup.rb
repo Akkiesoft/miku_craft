@@ -1,10 +1,12 @@
+require 'time'
+
 Plugin.create :backup do
   time = nil
   admin_user = "Hogehoge"
   mc_map_path = "/path/to/EjectCraft"
-  ssh_cmd = "ssh -i /home/hoge/.ssh/id_rsa"
+  ssh_cmd = "ssh -i /home/hoge/.ssh/id_ed25519"
   ssh_dest = "hoge@another.server"
-  ssh_dest_cmd = "/home/hoge/update_overview.sh"
+  ssh_dest_dir = "minecraft/"
 
   on_minute do
     time = Time.now
@@ -20,10 +22,9 @@ Plugin.create :backup do
         puts "Called update map!"
         Plugin.call(:minecraft_say, "Syncing map data to webserver")
         Plugin.call(:minecraft_save_off)
-        system("rsync -a --delete -e \"#{ssh_cmd}\" #{mc_map_path} #{ssh_dest}:")
+        system("rsync -a --delete -e \"#{ssh_cmd}\" #{mc_map_path} #{ssh_dest}:#{ssh_dest_dir}")
         Plugin.call(:minecraft_save_on)
         Plugin.call(:minecraft_say, "Sync map data successfully.")
-        system("#{ssh_cmd} #{ssh_dest} #{ssh_dest_cmd}")
       }
    end
   end
