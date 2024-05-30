@@ -4,7 +4,7 @@ require 'open3'
 Plugin.create :minecraft do
   mc_stdin = nil
   on_boot_server do
-    mc_stdin, mc_stdout, mc_stderr, wait_thr = Open3.popen3('java -Xmx1024M -Xms512M -jar minecraft_server.jar nogui')
+    mc_stdin, mc_stdout, mc_stderr, wait_thr = Open3.popen3('java -Xmx3072M -Xms3072M -jar minecraft_server.jar nogui log4j2.formatMsgNoLookups=true')
 
     stdout_thread = Thread.new do
       mc_stdout.each do |res|
