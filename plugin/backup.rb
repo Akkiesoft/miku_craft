@@ -8,6 +8,18 @@ Plugin.create :backup do
   ssh_dest = "hoge@another.server"
   ssh_dest_dir = "minecraft/"
 
+  defevent :update_map, prototype: [Pluggaloid::COLLECT]
+  defevent :server_raw_output, prototype: [Symbol, Pluggaloid::STREAM]
+
+  collection(:update_map) do |mutation|
+    subscribe(:server_raw_output, :stdout).each do |line|
+      case line
+      when %r<\A\[\d{2}:\d{2}:\d{2}\] \[Server thread/INFO\]: <(\w+)> update map\Z>
+        Plugin.call(:update_map, $1)
+      end
+    end
+  end
+
   on_minute do
     time = Time.now
     if time.hour == 9 and time.min == 0
