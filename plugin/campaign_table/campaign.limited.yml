@@ -1,0 +1,1216 @@
+- name: "1.20.6アップデートスタートダッシュキャンペーン！"
+  start: [2024, 5, 31]
+  end:   [2024, 6, 1]
+  type: item_random
+  table:
+    - id: 'minecraft:chainmail_helmet'
+      amount: 1
+      NBT:
+        custom_name: '小さいヘルメット'
+        lore: |-
+          1.20.6アップデートキャンペーン！小さい装備祭り
+          かなり小さい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: -0.25
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: -0.4
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+    - id: 'minecraft:chainmail_chestplate'
+      amount: 1
+      NBT:
+        custom_name: '小さい服'
+        lore: |-
+          1.20.6アップデートキャンペーン！小さい装備祭り
+          かなり小さい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: -0.25
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: -0.4
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+    - id: 'minecraft:chainmail_leggings'
+      amount: 1
+      NBT:
+        custom_name: '小さいレギンス'
+        lore: |-
+          1.20.6アップデートキャンペーン！小さい装備祭り
+          かなり小さい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: -0.25
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: -0.4
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+    - id: 'minecraft:chainmail_boots'
+      amount: 1
+      NBT:
+        custom_name: '小さい靴'
+        lore: |-
+          1.20.6アップデートキャンペーン！小さい装備祭り
+          かなり小さい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: -0.25
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: -0.4
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+    - id: 'minecraft:chainmail_helmet'
+      amount: 1
+      NBT:
+        custom_name: '大きいヘルメット'
+        lore: |-
+          1.20.6アップデートキャンペーン！大きい装備祭り
+          かなり大きい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "player.block_interaction_range"
+              name: "player.block_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "player.entity_interaction_range"
+              name: "player.entity_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+    - id: 'minecraft:chainmail_chestplate'
+      amount: 1
+      NBT:
+        custom_name: '大きい服'
+        lore: |-
+          1.20.6アップデートキャンペーン！大きい装備祭り
+          かなり大きい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "player.block_interaction_range"
+              name: "player.block_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "player.entity_interaction_range"
+              name: "player.entity_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+    - id: 'minecraft:chainmail_leggings'
+      amount: 1
+      NBT:
+        custom_name: '大きいレギンス'
+        lore: |-
+          1.20.6アップデートキャンペーン！大きい装備祭り
+          かなり大きい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "player.block_interaction_range"
+              name: "player.block_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "player.entity_interaction_range"
+              name: "player.entity_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+    - id: 'minecraft:chainmail_boots'
+      amount: 1
+      NBT:
+        custom_name: '大きい靴'
+        lore: |-
+          1.20.6アップデートキャンペーン！大きい装備祭り
+          かなり大きい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "player.block_interaction_range"
+              name: "player.block_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "player.entity_interaction_range"
+              name: "player.entity_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+
+- name: "1.20.6アップデートキャンペーン！小さい装備祭り"
+  start: [2024, 6, 9]
+  end:   [2024, 6, 16]
+  type: item_random
+  table:
+    - id: 'minecraft:chainmail_helmet'
+      amount: 2
+      NBT:
+        custom_name: '小さいヘルメット'
+        lore: |-
+          1.20.6アップデートキャンペーン！小さい装備祭り
+          かなり小さい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: -0.25
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: -0.4
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+    - id: 'minecraft:chainmail_chestplate'
+      amount: 2
+      NBT:
+        custom_name: '小さい服'
+        lore: |-
+          1.20.6アップデートキャンペーン！小さい装備祭り
+          かなり小さい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: -0.25
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: -0.4
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+    - id: 'minecraft:chainmail_leggings'
+      amount: 2
+      NBT:
+        custom_name: '小さいレギンス'
+        lore: |-
+          1.20.6アップデートキャンペーン！小さい装備祭り
+          かなり小さい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: -0.25
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: -0.4
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+    - id: 'minecraft:chainmail_boots'
+      amount: 2
+      NBT:
+        custom_name: '小さい靴'
+        lore: |-
+          1.20.6アップデートキャンペーン！小さい装備祭り
+          かなり小さい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: -0.25
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: -0.4
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+
+- name: "1.20.6アップデートキャンペーン！大きい装備祭り"
+  start: [2024, 6, 2]
+  end:   [2024, 6, 9]
+  type: item_random
+  table:
+    - id: 'minecraft:chainmail_helmet'
+      amount: 2
+      NBT:
+        custom_name: '大きいヘルメット'
+        lore: |-
+          1.20.6アップデートキャンペーン！大きい装備祭り
+          かなり大きい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "player.block_interaction_range"
+              name: "player.block_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+            - type: "player.entity_interaction_range"
+              name: "player.entity_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: head
+    - id: 'minecraft:chainmail_chestplate'
+      amount: 2
+      NBT:
+        custom_name: '大きい服'
+        lore: |-
+          1.20.6アップデートキャンペーン！大きい装備祭り
+          かなり大きい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "player.block_interaction_range"
+              name: "player.block_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+            - type: "player.entity_interaction_range"
+              name: "player.entity_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: chest
+    - id: 'minecraft:chainmail_leggings'
+      amount: 2
+      NBT:
+        custom_name: '大きいレギンス'
+        lore: |-
+          1.20.6アップデートキャンペーン！大きい装備祭り
+          かなり大きい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "player.block_interaction_range"
+              name: "player.block_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+            - type: "player.entity_interaction_range"
+              name: "player.entity_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: legs
+    - id: 'minecraft:chainmail_boots'
+      amount: 2
+      NBT:
+        custom_name: '大きい靴'
+        lore: |-
+          1.20.6アップデートキャンペーン！大きい装備祭り
+          かなり大きい
+        repair_cost: 40
+        attribute_modifiers:
+          show_in_tooltip: false
+          modifiers:
+            - type: "generic.scale"
+              name: "generic.scale"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.step_height"
+              name: "generic.step_height"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.safe_fall_distance"
+              name: "generic.safe_fall_distance"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.fall_damage_multiplier"
+              name: "generic.fall_damage_multiplier"
+              amount: -0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.jump_strength"
+              name: "generic.jump_strength"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "generic.gravity"
+              name: "generic.gravity"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "player.block_interaction_range"
+              name: "player.block_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+            - type: "player.entity_interaction_range"
+              name: "player.entity_interaction_range"
+              amount: 0.5
+              operation: add_multiplied_total
+              uuid: MINECRAFT_UUID
+              slot: feet
+
+- name: "1.20.6アップデートキャンペーン！食べ物祭り"
+  start: [2024, 6, 16]
+  end:   [2024, 6, 23]
+  type: item_random
+  table:
+    - id: 'minecraft:glistering_melon_slice'
+      amount: 'rand(1..99)'
+      NBT:
+        max_stack_size: 99
+        custom_name: '食べられる金のスイカ'
+        lore: |-
+          1.20.6アップデートキャンペーン！食べ物祭り
+          食えないアイテムを食えるように設定できるのでやってみました
+          どうして金スイカだけ食えないんですかね
+        food:
+          nutrition: 10
+          saturation: 10
+          can_always_eat: true
+          eat_seconds: 1.2
+          effects:
+            - probability: 1
+              effect:
+                id: instant_health
+                amplifier: 1
+    - id: 'minecraft:stick'
+      amount: 'rand(1..99)'
+      NBT:
+        max_stack_size: 99
+        custom_name: 'うまい棒'
+        lore: |-
+          1.20.6アップデートキャンペーン！食べ物祭り
+          実は通算ログインボーナスの棒も食えるようになってます
+        food:
+          nutrition: 1
+          saturation: 1
+          eat_seconds: 0.8
+    - id: 'minecraft:gold_ingot'
+      amount: 'rand(1..99)'
+      NBT:
+        max_stack_size: 99
+        custom_name: '卵焼き'
+        lore: |-
+          1.20.6アップデートキャンペーン！食べ物祭り
+          甘くて美味しい！
+        food:
+          nutrition: 6
+          saturation: 6
+          effects:
+            - probability: 1
+              effect:
+                id: health_boost
+                amplifier: 0
+                duration: 6000
+    - id: 'minecraft:paper'
+      amount: 'rand(1..99)'
+      NBT:
+        max_stack_size: 99
+        custom_name: 'キムワイプ'
+        lore: |-
+          1.20.6アップデートキャンペーン！食べ物祭り
+          キムワイプおいしい！キムワイプおいしい！！！
+        food:
+          nutrition: 2
+          saturation: 0
+          effects:
+            - probability: 1
+              effect:
+                id: hunger
+                amplifier: 0
+                duration: 200
+    - id: 'minecraft:sugar'
+      amount: 'rand(1..99)'
+      NBT:
+        max_stack_size: 99
+        custom_name: '砂糖'
+        lore: |-
+          1.20.6アップデートキャンペーン！食べ物祭り
+          ガンギマリ
+        food:
+          nutrition: 1
+          saturation: 0
+          can_always_eat: true
+          eat_seconds: 0.05
+          effects:
+            - probability: 0.15
+              effect:
+                id: absorption
+                amplifier: 0
+                duration: 200
+            - probability: 0.15
+              effect:
+                id: blindness
+                amplifier: 0
+                duration: 6000
+            - probability: 0.15
+              effect:
+                id: darkness
+                amplifier: 0
+                duration: 6000
+            - probability: 0.15
+              effect:
+                id: luck
+                amplifier: 0
+                duration: 6000
+    - id: 'minecraft:glowstone_dust'
+      amount: 'rand(1..99)'
+      NBT:
+        max_stack_size: 99
+        custom_name: 'ハッピーターンの粉'
+        lore: |-
+          1.20.6アップデートキャンペーン！食べ物祭り
+          食ってみな、トぶぞ
+        food:
+          nutrition: 1
+          saturation: 0
+          can_always_eat: true
+          eat_seconds: 0.05
+          effects:
+            - probability: 0.15
+              effect:
+                id: absorption
+                amplifier: 0
+                duration: 200
+            - probability: 0.15
+              effect:
+                id: glowing
+                amplifier: 0
+                duration: 6000
+            - probability: 0.15
+              effect:
+                id: levitation
+                amplifier: 0
+                duration: 200
+            - probability: 0.15
+              effect:
+                id: luck
+                amplifier: 0
+                duration: 6000
+
+- name: "1.20.6アップデートキャンペーン！道具祭り"
+  start: [2024, 6, 23]
+  end:   [2024, 6, 30]
+  type: item_random
+  table:
+    - id: 'minecraft:diamond_hoe'
+      amount: 1
+      NBT:
+        custom_name: 'ピッケルクワ'
+        lore: |-
+          1.20.6アップデートキャンペーン！道具祭り
+          ピッケルとしても使える
+        damage: 0
+        max_damage: 1400
+        tool:
+          damage_per_block: 1
+          default_mining_speed: 0.5
+          rules:
+            - blocks: "#minecraft:mineable/pickaxe"
+              correct_for_drops: true
+              speed:
+                _type: auto
+                value: 'rand(2.0..8.0)'
+          rules:
+            - blocks: "#minecraft:mineable/hoe"
+              correct_for_drops: true
+              speed:
+                _type: auto
+                value: 'rand(2.0..8.0)'
+    - id: 'minecraft:diamond_hoe'
+      amount: 1
+      NBT:
+        custom_name: '斧クワ'
+        lore: |-
+          1.20.6アップデートキャンペーン！道具祭り
+          斧としても使える
+        damage: 0
+        max_damage: 1400
+        tool:
+          damage_per_block: 1
+          default_mining_speed: 0.5
+          rules:
+            - blocks: "#minecraft:mineable/axe"
+              correct_for_drops: true
+              speed:
+                _type: auto
+                value: 'rand(2.0..8.0)'
+          rules:
+            - blocks: "#minecraft:mineable/hoe"
+              correct_for_drops: true
+              speed:
+                _type: auto
+                value: 'rand(2.0..8.0)'
+    - id: 'minecraft:diamond_hoe'
+      amount: 1
+      NBT:
+        custom_name: 'スコップクワ'
+        lore: |-
+          1.20.6アップデートキャンペーン！道具祭り
+          シャベルとしても使える
+        damage: 0
+        max_damage: 1400
+        tool:
+          damage_per_block: 1
+          default_mining_speed: 0.5
+          rules:
+            - blocks: "#minecraft:mineable/shovel"
+              correct_for_drops: true
+              speed:
+                _type: auto
+                value: 'rand(2.0..8.0)'
+          rules:
+            - blocks: "#minecraft:mineable/hoe"
+              correct_for_drops: true
+              speed:
+                _type: auto
+                value: 'rand(2.0..8.0)'
+    - id: 'minecraft:diamond_hoe'
+      amount: 1
+      NBT:
+        custom_name: 'ソードクワ'
+        lore: |-
+          1.20.6アップデートキャンペーン！道具祭り
+          剣としても使える
+        damage: 0
+        max_damage: 1400
+        tool:
+          damage_per_block: 1
+          default_mining_speed: 0.5
+          rules:
+            - blocks: "#minecraft:sword_efficient"
+              correct_for_drops: true
+              speed:
+                _type: auto
+                value: 'rand(2.0..8.0)'
+          rules:
+            - blocks: "#minecraft:mineable/hoe"
+              correct_for_drops: true
+              speed:
+                _type: auto
+                value: 'rand(2.0..8.0)'
+        attribute_modifiers:
+          modifiers:
+            - type: "generic.attack_damage"
+              name: "generic.attack_damage"
+              amount: 6
+              operation: add_value
+              uuid: MINECRAFT_UUID
+              slot: mainhand
+            - type: "generic.attack_speed"
+              name: "generic.attack_speed"
+              amount: -2.4
+              operation: add_value
+              uuid: MINECRAFT_UUID
+              slot: mainhand

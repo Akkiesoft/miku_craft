@@ -1,0 +1,601 @@
+- name: 年末年始キャンペーン
+  start: [1, 1]
+  end:   [1, 7]
+  type: item_random
+  table: &nenmatsunenshi_camapign_table
+    - id: 'minecraft:sea_pickle'
+      NBT:
+        custom_name: "門松"
+        lore: "メリーお正月！"
+        attribute_modifiers:
+          modifiers:
+            - type: "generic.attack_damage"
+              name: "generic.attack_damage"
+              amount: 6
+              operation: add_value
+              uuid: MINECRAFT_UUID
+              slot: mainhand
+    - id: 'minecraft:tipped_arrow'
+      NBT:
+        custom_name: "破魔矢"
+        lore: "メリーお正月！"
+        potion_contents:
+          potion: strong_healing
+    - id: 'minecraft:wooden_sword'
+      NBT:
+        custom_name: "羽子板"
+        lore: "メリーお正月！"
+        attribute_modifiers:
+          modifiers:
+            - type: "generic.attack_damage"
+              name: "generic.attack_damage"
+              amount: 16
+              operation: add_value
+              uuid: MINECRAFT_UUID
+              slot: mainhand
+    - id: 'minecraft:player_head'
+      NBT:
+        damage: 3
+        custom_name: "獅子舞"
+        lore: "メリーお正月！"
+        profile:
+          name: "<%= user_name %>"
+        attribute_modifiers:
+          modifiers:
+            - type: "generic.max_health"
+              name: "generic.max_health"
+              amount: 2
+              operation: add_value
+              uuid: MINECRAFT_UUID
+              slot: head
+
+- name: &make_america_great_again ドナルド・トランプ永久凍結<%= Time.now.year - 2021 %>周年記念イベント
+  start: [1, 9]
+  end:   [1, 20]
+  type: item_random
+  table:
+    - id: 'minecraft:packed_ice'
+      NBT:
+        custom_name: "realDonaldTrump"
+        lore: *make_america_great_again
+        enchantments:
+          levels:
+            frost_walker: 5
+    - id: 'minecraft:blue_ice'
+      NBT:
+        custom_name: "realDonaldTrump"
+        lore: *make_america_great_again
+        enchantments:
+          levels:
+            frost_walker: 10
+    - id: 'minecraft:leather_helmet'
+      NBT:
+        custom_name: "MAGA cap"
+        lore: *make_america_great_again
+        dyed_color: { rgb: 0xff0000 }
+        enchantments:
+          levels:
+            loyalty: 1
+            lure:
+              _type: byte
+              value: "rand(0..3)"
+            feather_falling:
+              _type: byte
+              value: "Enumerator.new{|y| loop{ y << rand(2) } }.find_index(1)"
+            frost_walker:
+              _type: byte
+              value: "Enumerator.new{|y| loop{ y << rand(2) } }.find_index(1)"
+            projectile_protection:
+              _type: byte
+              value: "Enumerator.new{|y| loop{ y << rand(2) } }.find_index(1)"
+        attribute_modifiers:
+          modifiers:
+            - type: "generic.armor"
+              name: "generic.armor"
+              amount:
+                _type: byte
+                value: 'Enumerator.new{|y| loop{ y << rand(2) } }.find_index(1) + 1'
+              operation: add_value
+              uuid: MINECRAFT_UUID
+              slot: head
+
+- name: 自殺強化月間
+  start: [3, 1]
+  end: [3, 31]
+  type: item_random
+  table:
+    - id: 'minecraft:spider_eye'
+      NBT:
+        custom_name: "蜘蛛の目"
+        lore: "自殺強化月間記念"
+    - id: 'minecraft:lead'
+      NBT:
+        custom_name: "首綱"
+        lore: "自殺強化月間記念"
+    - id: 'minecraft:flint_and_steel'
+      NBT: &chakkaman
+        custom_name: "チャッカマン"
+        lore: "自殺強化月間記念"
+        enchantments:
+          levels:
+            fire_aspect:
+              _type: byte
+              value: "rand(0..10)"
+        attribute_modifiers:
+          modifiers:
+            - type: "generic.attack_damage"
+              name: "generic.attack_damage"
+              amount: 4
+              operation: add_value
+              uuid: MINECRAFT_UUID
+              slot: mainhand
+    - id: 'minecraft:anvil'
+      NBT:
+        custom_name: "金床"
+        lore: "自殺強化月間記念"
+        attribute_modifiers:
+          modifiers:
+            - type: "generic.knockback_resistance"
+              name: "generic.knockback_resistance"
+              amount: 0.25
+              operation: add_value
+              uuid: MINECRAFT_UUID
+              slot: mainhand
+            - type: "generic.movement_speed"
+              name: "generic.movement_speed"
+              amount: -0.05
+              operation: add_value
+              uuid: MINECRAFT_UUID
+              slot: mainhand
+            - type: "generic.attack_damage"
+              name: "generic.attack_damage"
+              amount: 5
+              operation: add_value
+              uuid: MINECRAFT_UUID
+              slot: mainhand
+        enchantments:
+          levels:
+            knockback: 1
+    - id: 'minecraft:<%= %w[potion splash_potion lingering_potion].sample %>'
+      amount: 1
+      NBT:
+        custom_name: "SARS-CoV-2"
+        lore: "自殺強化月間記念\n飲むと新型コロナウィルス感染症で死にます"
+        potion_contents:
+          custom_color:
+            _type: auto
+            value: 'rand(0..0xff_ff_ff)'
+          custom_effects:
+            - id: slowness
+              dration: 2147483647
+            - id: mining_fatigue
+              duration: 2147483647
+            - id: nausea
+              duration: 2147483647
+            - id: wither
+              amplifier: 2
+              duration: 2147483647
+
+- name: あしゅりーおじさん600ユーロスられ記念
+  start: [3, 7]
+  end: [3, 10]
+  type: item_random
+  table:
+    - id: 'minecraft:<%= bgcolor = %w<magenta light_blue yellow lime pink gray light-gray cyan purple blue brown green red black>.sample %>_banner'
+      amount: 2
+      NBT:
+        custom_name: "ドイツのトリタペストリー"
+        banner_patterns:
+          - {pattern: creeper,         color: orange}
+          - {pattern: half_horizontal, color: {_type: 'auto', value: 'bgcolor'}}
+          - {pattern: rhombus,         color: {_type: 'auto', value: 'bgcolor'}}
+          - {pattern: rhombus,         color: white}
+          - {pattern: triangle_bottom, color: {_type: 'auto', value: 'bgcolor'}}
+          - {pattern: circle,          color: white}
+          - {pattern: stripe_top,      color: {_type: 'auto', value: 'bgcolor'}}
+
+- name: re4k垢BAN記念イベント
+  start: [3, 12]
+  end: [3, 19]
+  type: item_random
+  table:
+    - id: 'minecraft:packed_ice'
+      NBT:
+        custom_name: "re4k"
+        lore: "レニウム垢BAN記念"
+        enchantments:
+          levels:
+            frost_walker: 5
+    - id: 'minecraft:blue_ice'
+      NBT:
+        custom_name: 'cn'
+        lore: "レニウム垢BAN記念"
+        enchantments:
+          levels:
+            frost_walker: 10
+
+- name: Favstar プレミアムユーザ垢BAN記念キャンペーン
+  start: [3, 12]
+  end:   [3, 19]
+  description: 喫茶室長が羊毛ブロックは燃えないと勘違いしていた記念
+  type: item_random
+  table:
+    - id: 'minecraft:<%= %w<white orange magenta light_blue yellow lime pink gray silver cyan purple blue brown green red black>.sample %>_terracotta'
+      NBT:
+        custom_name: "燃えない羊毛"
+        lore: "Favstar プレミアムユーザ垢BAN記念"
+        enchantments:
+          levels:
+            fire_protection:
+              _type: byte
+              value: "rand(0..10)"
+
+- name: 七夕キャンペーン
+  start: [7, 7]
+  end:   [7, 7]
+  type: item_random
+  table:
+    - id: 'minecraft:name_tag'
+      NBT:
+        custom_name: "短冊"
+        lore: "右クリックすると、MOBが短冊になってしまう不思議な札"
+
+- name: 前祭
+  start: [7, 11]
+  end:   [7, 18]
+  description: 祇園祭・前祭キャンペーン(前祭の山鉾巡行は17日です)
+  type: item_random
+  table:
+    - id: 'minecraft:oak_boat'
+      NBT:
+        custom_name: "舁山"
+        lore: "<%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%> 祇園祭コラボ"
+    - id: 'minecraft:spruce_boat'
+      NBT:
+        custom_name: "鉾"
+        lore: "<%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%> 祇園祭コラボ"
+    - id: 'minecraft:birch_boat'
+      NBT:
+        custom_name: "曳山"
+        lore: "<%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%> 祇園祭コラボ"
+    - id: 'minecraft:jungle_boat'
+      NBT:
+        custom_name: "船鉾"
+        lore: "<%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%> 祇園祭コラボ"
+    - id: 'minecraft:acacia_boat'
+      NBT:
+        custom_name: "傘鉾"
+        lore: "<%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%> 祇園祭コラボ"
+    - id: 'minecraft:player_head'
+      NBT:
+        damage: 3
+        custom_name: "御神体メット"
+        lore: "<%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%> 祇園祭コラボ"
+        profile: { name: "<%= user_name %>" }
+        attribute_modifiers:
+          modifiers:
+          - type: "generic.max_health"
+            name: "generic.max_health"
+            amount: 2
+            operation: add_value
+            uuid: MINECRAFT_UUID
+            slot: head
+        enchantments:
+          levels:
+            fire_protection: 4
+- name: 後祭
+  start: [7, 18]
+  end:   [7, 24]
+  description: 祇園祭・後祭キャンペーン(後祭の山鉾巡行は24日です)
+  type: item_random
+  table:
+    - id: 'minecraft:oak_boat'
+      NBT:
+        custom_name: "舁山"
+        lore: "<%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%> 祇園祭コラボ"
+    - id: 'minecraft:birch_boat'
+      NBT:
+        custom_name: "曳山"
+        lore: "<%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%> 祇園祭コラボ"
+    - id: 'minecraft:jungle_boat'
+      NBT:
+        custom_name: "船鉾"
+        lore: "<%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%> 祇園祭コラボ"
+    - id: 'minecraft:cherry_boat'
+      NBT:
+        custom_name: "花傘"
+        lore: "<%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%> 祇園祭コラボ"
+
+- name: パインアメの日キャンペーン
+  start: [8, 8]
+  end:   [8, 8]
+  type: item_random
+  table:
+    - id: 'minecraft:enchanted_golden_apple'
+      NBT:
+        custom_name: "パインアレ"
+        lore: |-
+            8/8はパインアメの日
+            2023年阪神タイガースリーグ優勝記念のとき
+            岡田監督がベンチで食べていた飴
+        enchantments:
+          levels:
+            looting: 18
+        attribute_modifiers:
+          modifiers:
+          - type: "generic.attack_damage"
+            name: "generic.attack_damage"
+            amount: 18
+            slot: offhand
+            operation: add_value
+            uuid: MINECRAFT_UUID
+
+- name: 山の日キャンペーン
+  start: [8, 11]
+  end:   [8, 11]
+  type: item_random
+  table:
+    - id: 'minecraft:dirt'
+      NBT:
+        custom_name: "山を構成する土ブロック"
+        lore: |-
+            8/11は山の日です
+            <%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%>
+
+- name: 京都五山送り火キャンペーン(8/19まで)
+  start: [8, 13]
+  end:   [8, 19]
+  type: item_random
+  table:
+    - id: 'minecraft:dark_oak_boat'
+      NBT:
+        custom_name: "船形"
+        lore: "<%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%>\n京都五山送り火記念キャンペーン"
+    - id: 'minecraft:flint_and_steel'
+      NBT:
+        <<: *chakkaman
+        custom_name: "チャッカマン"
+        lore: "<%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%>\n京都五山送り火記念キャンペーン"
+    - id: 'minecraft:campfire'
+      NBT:
+        custom_name: "火床"
+        lore: "<%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%>\n京都五山送り火記念キャンペーン"
+    - id: 'minecraft:enchanted_book'
+      NBT:
+        stored_enchantments:
+          levels:
+            fire_protection: 8
+            fire_aspect: 8
+            flame: 8
+        custom_name: "わざマシン38"
+        lore: "<%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%>\n京都五山送り火記念キャンペーン"
+    - id: 'minecraft:lingering_potion'
+      amount: 4
+      NBT:
+        max_stack_size: 8
+        potion_contents:
+          custom_effects:
+          - id: levitation
+            amplifier: 2
+            duration: 600
+        custom_name: "ドローン"
+        lore: "<%= Time.now.year%>/<%= Time.now.month%>/<%= Time.now.day%>\n京都五山送り火記念キャンペーン"
+
+- name: 初音ミクコラボ(9/3まで)
+  start: [8, 28]
+  end:   [9, 3]
+  type: item_random
+  table:
+    - id: 'minecraft:bamboo'
+      NBT:
+        custom_name: "ネギ"
+        lore: "初音ミクコラボ<%= Time.now.year%>"
+        attribute_modifiers:
+          - type: "generic.attack_damage"
+            name: "generic.attack_damage"
+            amount:
+              _type: auto
+              value: 'Time.now.year - 2007'
+            operation: add_value
+            uuid: MINECRAFT_UUID
+            slot: mainhand
+          - type: "generic.attack_speed"
+            name: "generic.attack_speed"
+            amount:
+              _type: auto
+              value: '(Time.now.year - 2007).to_f / 10'
+            operation: add_value
+            uuid: MINECRAFT_UUID
+            slot: mainhand
+    - id: 'minecraft:player_head'
+      NBT:
+        custom_name: "みくみくメット"
+        lore: "初音ミクコラボ<%= Time.now.year%>\n設置しないように注意！"
+        # /give @p minecraft:player_head[minecraft:custom_name='{"text":"Hatsune Miku","color":"gold","underlined":true,"bold":true,"italic":false}',minecraft:lore=['{"text":"Custom Head ID: 61919","color":"gray","italic":false}','{"text":"www.minecraft-heads.com","color":"blue","italic":false}'],profile={id:[I;1276831889,-155956764,-1491969687,-1219496898],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTEzN2NjOGFjOTEyY2ExMDljMDlmYzNiN2FiNjg5Y2YzMjFiYWFlMjYwNjJiM2NlZTFmYzU5MzFhZmIxNDU2In19fQ=="}]}] 1
+        profile:
+          id: { _type: intarray, value: '[1276831889,-155956764,-1491969687,-1219496898]' }
+          properties:
+            - name: "textures"
+              value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTEzN2NjOGFjOTEyY2ExMDljMDlmYzNiN2FiNjg5Y2YzMjFiYWFlMjYwNjJiM2NlZTFmYzU5MzFhZmIxNDU2In19fQ=="
+        attribute_modifiers:
+          - type: "generic.max_health"
+            name: "generic.max_health"
+            amount:
+              _type: byte
+              value: 'Math.sqrt(Time.now.year - 2007)'
+            operation: add_value
+            uuid: MINECRAFT_UUID
+            slot: head
+          - type: "generic.armor"
+            name: "generic.armor"
+            amount:
+              _type: auto
+              value: '(Time.now.year - 2007)'
+            operation: add_value
+            uuid: MINECRAFT_UUID
+            slot: head
+          - type: "generic.luck"
+            name: "generic.luck"
+            amount: 0.05
+            operation: add_multiplied_base
+            uuid: MINECRAFT_UUID
+            slot: head
+        enchantments:
+          levels:
+            fire_protection: 2
+            projectile_protection: 10
+    - id: 'minecraft:leather_chestplate'
+      NBT:
+        custom_name: "ミクコス"
+        lore: "初音ミクコラボ<%= Time.now.year%>"
+        dyed_color: { rgb: 0xffffff }
+        attribute_modifiers:
+          - type: "generic.armor"
+            name: "generic.armor"
+            amount:
+              _type: auto
+              value: '(Time.now.year - 2007)'
+            operation: add_value
+            uuid: MINECRAFT_UUID
+            slot: chest
+          - type: "generic.armor_toughness"
+            name: "generic.armor_toughness"
+            amount: 2
+            operation: add_value
+            uuid: MINECRAFT_UUID
+            slot: chest
+          - type: "generic.luck"
+            name: "generic.luck"
+            amount: 0.05
+            operation: add_multiplied_base
+            uuid: MINECRAFT_UUID
+            slot: chest
+    - id: 'minecraft:leather_leggings'
+      NBT:
+        custom_name: "スカート"
+        lore: "初音ミクコラボ<%= Time.now.year%>"
+        dyed_color: { rgb: 0x6b696e }
+        attribute_modifiers:
+          modifiers:
+          - type: "generic.armor"
+            name: "generic.armor"
+            amount:
+              _type: auto
+              value: '(Time.now.year - 2007)'
+            operation: add_value
+            uuid: MINECRAFT_UUID
+            slot: legs
+          - type: "generic.armor_toughness"
+            name: "generic.armor_toughness"
+            amount: 2
+            operation: add_value
+            uuid: MINECRAFT_UUID
+            slot: legs
+          - type: "generic.luck"
+            name: "generic.luck"
+            amount: 0.05
+            operation: add_multiplied_base
+            uuid: MINECRAFT_UUID
+            slot: legs
+    - id: 'minecraft:leather_boots'
+      NBT:
+        custom_name: "ニーソ"
+        lore: "初音ミクコラボ<%= Time.now.year%>"
+        dyed_color: { rgb: 0x4a4853 }
+        attribute_modifiers:
+          - type: "generic.armor"
+            name: "generic.armor"
+            amount: 3
+            operation: add_value
+            uuid: MINECRAFT_UUID
+            slot: feet
+          - type: "generic.armor_toughness"
+            name: "generic.armor_toughness"
+            amount:
+              _type: auto
+              value: '(Time.now.year - 2007)'
+            operation: add_value
+            uuid: MINECRAFT_UUID
+            slot: feet
+          - type: "generic.luck"
+            name: "generic.luck"
+            amount: 0.05
+            operation: add_multiplied_base
+            uuid: MINECRAFT_UUID
+            slot: feet
+    - id: 'minecraft:shield'
+      NBT:
+        custom_name: "みくみくシールド"
+        lore: "初音ミクコラボ<%= Time.now.year%>"
+        base_color: light_blue
+        banner_patterns:
+          - {color: 'cyan', pattern: "triangle_top"}
+          - {color: 'cyan', pattern: "triangle_bottom"}
+        attribute_modifiers:
+          - type: "generic.armor"
+            name: "generic.armor"
+            amount:
+              _type: auto
+              value: '(Time.now.year - 2007)'
+            operation: add_value
+            uuid: MINECRAFT_UUID
+            slot: offhand
+          - type: "generic.armor_toughness"
+            name: "generic.armor_toughness"
+            amount: 1
+            operation: add_value
+            uuid: MINECRAFT_UUID
+            slot: offhand
+    - id: 'minecraft:potion'
+      amount: 1
+      NBT:
+        custom_name: "初音ミクちゃんのおぱんつドリップコーヒー"
+        lore: "初音ミクコラボ<%= Time.now.year%>"
+        max_stack_size: 8
+        potion_contents:
+          custom_effects:
+          - id: regeneration
+            amplifier: 1
+            duration: 36000
+          - id: resistance
+            amplifier: 0
+            duration: 36000
+          - id: saturation
+            amplifier: 0
+            duration: 40000
+          - id: health_boost
+            amplifier: 0
+            duration: 24000
+          - id: absorption
+            amplifier: 0
+            duration: 32000
+
+- name: 人権週間キャンペーン
+  start: [12, 4]
+  end:   [12, 10]
+  type: item_random
+  table:
+    - id: 'minecraft:paper'
+      NBT:
+        custom_name: "一日乗車券"
+
+- name: mikutter<%= Time.now.year - 2009 %>周年記念キャンペーン
+  start: [12, 20]
+  end:   [12, 25]
+  type: item_random
+  table:
+    - id: 'minecraft:cake'
+      NBT:
+        custom_name: "誕生日ケーキ"
+        lore: |-
+            mikutterの誕生日記念
+            <%= Time.now.year - 2009 %>周年
+        max_stack_size:
+          _type: auto
+          value: 'Time.now.year - 2009'
+- name: 年末年始キャンペーン
+  start: [12, 25]
+  end:   [12, 31]
+  type: item_random
+  table: *nenmatsunenshi_camapign_table
+
