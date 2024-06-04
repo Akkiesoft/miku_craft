@@ -43,74 +43,71 @@ Plugin.create :continuous_login do
   on_give_continuous_login_bonus do |name, days|
     lore = "#{Time.now.year}/#{Time.now.month}/#{Time.now.day} 通算ログインボーナス\n#{days}日ログイン記念に#{name}がもらった"
     case
+    when (days % 89) == 0
+      Plugin.call(:giftbox_keep_stack,
+                  name,
+                  "#{days}日記念！エリトラをプレゼント",
+                  MinecraftItem::Stack.new(
+                    MinecraftItem::Item.new(
+                      :elytra,
+                      component: NBT.build({ lore: lore })
+                    ), 1))
     when (days % 31) == 0
       Plugin.call(:giftbox_keep_stack,
                   name,
-                  "#{days}日記念！ダイヤのクワをプレゼント",
+                  "#{days}日記念！シュルカーの殻をプレゼント",
                   MinecraftItem::Stack.new(
                     MinecraftItem::Item.new(
-                      :diamond_hoe,
-                      component: NBT.build(
-                        {
-                          custom_name: 'ダイヤのクワ',
-                          lore: lore
-                        })
-                    ),
-                    1)
-                 )
+                      :shulker_shell,
+                      component: NBT.build({ lore: lore })
+                    ), 1))
     when (days % 17) == 0
       Plugin.call(:giftbox_keep_stack,
                   name,
-                  "#{days}日記念！マインカートをプレゼント",
+                  "#{days}日記念！アパ社長水をプレゼント",
                   MinecraftItem::Stack.new(
                     MinecraftItem::Item.new(
-                      :minecart,
+                      :experience_bottle,
                       component: NBT.build(
-                        { lore: "#{lore}\nteocraft全線では駅乗降車場所への\nマインカート放置は禁止されています",
-                          max_stack_size: 8
-                        }
+                        { custom_name: 'アパ社長水', max_stack_size: 16 }
                       )
-                    ),
-                    1)
-                 )
-    when (days % 7) == 0
-      food = Matsuya.order.gsub(/[　（）]/, '　'=>'', '（'=>'(', '）'=>')')
+                    ), 1))
+    when (days % 9) == 0
       Plugin.call(:giftbox_keep_stack,
                   name,
-                  "#{days}日記念！#{food}をプレゼント",
+                  "ログイン#{days}日目！メンマをプレゼント",
                   MinecraftItem::Stack.new(
                     MinecraftItem::Item.new(
-                      :rabbit_stew,
+                      :bamboo_sapling,
                       component: NBT.build(
-                        { custom_name: food.to_s, lore: lore, max_stack_size: 8 }
-                      )),
-                    1)
-                 )
+                        { custom_name: 'メンマ', food: { nutrition: 2, saturation: 2 } }
+                      )
+                    ), 1))
+    when (days % 7) == 0
       Plugin.call(:giftbox_keep_stack,
                   name,
-                  nil,
+                  "#{days}日記念！アパ社長カレーをプレゼント",
                   MinecraftItem::Stack.new(
                     MinecraftItem::Item.new(
                       :mushroom_stew,
                       component: NBT.build(
-                        { custom_name: '味噌汁', lore: lore, max_stack_size: 8 }
-                      )),
-                    1)
-                 )
+                        { custom_name: 'アパ社長カレー', max_stack_size: 16 }
+                      )
+                    ), 1))
     when (days % 5) == 0
       Plugin.call(:giftbox_keep_stack,
                   name,
-                  "#{days}日記念！経験値ボトルをプレゼント",
-                  MinecraftItem::Stack.new(MinecraftItem::Item.new(:experience_bottle), 1))
+                  "#{days}日記念！石炭をプレゼント",
+                  MinecraftItem::Stack.new(MinecraftItem::Item.new(:coal), 1))
     else
       Plugin.call(:giftbox_keep_stack,
                   name,
-                  "ログイン#{days}日目！棒をプレゼント",
+                  "ログイン#{days}日目！うまい棒をプレゼント",
                   MinecraftItem::Stack.new(
                     MinecraftItem::Item.new(
                       :stick,
                       component: NBT.build(
-                        { food: { nutrition: 1, saturation: 2 } }
+                        { custom_name: 'うまい棒', food: { nutrition: 1, saturation: 2 } }
                       )
                     ), 1))
     end
