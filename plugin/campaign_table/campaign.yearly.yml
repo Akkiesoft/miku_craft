@@ -10,10 +10,9 @@
         attribute_modifiers:
           modifiers:
             - type: "generic.attack_damage"
-              name: "generic.attack_damage"
               amount: 6
               operation: add_value
-              uuid: MINECRAFT_UUID
+              id: '<%= SecureRandom.uuid %>'
               slot: mainhand
     - id: 'minecraft:tipped_arrow'
       NBT:
@@ -28,10 +27,9 @@
         attribute_modifiers:
           modifiers:
             - type: "generic.attack_damage"
-              name: "generic.attack_damage"
               amount: 16
               operation: add_value
-              uuid: MINECRAFT_UUID
+              id: '<%= SecureRandom.uuid %>'
               slot: mainhand
     - id: 'minecraft:player_head'
       NBT:
@@ -43,10 +41,9 @@
         attribute_modifiers:
           modifiers:
             - type: "generic.max_health"
-              name: "generic.max_health"
               amount: 2
               operation: add_value
-              uuid: MINECRAFT_UUID
+              id: '<%= SecureRandom.uuid %>'
               slot: head
 
 - name: 年末年始キャンペーン
