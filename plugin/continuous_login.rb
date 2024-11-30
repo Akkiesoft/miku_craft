@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
+
 require 'date'
 
 Plugin.create :continuous_login do
   defevent :active_players, prototype: [Pluggaloid::COLLECT]
 
   save_file = File.join(__dir__, 'count.dat')
-  counter = FileTest.exist?(save_file) ? Marshal.load(File.open(save_file, &:read)) : {}
+  counter = FileTest.exist?(save_file) ? Marshal.load(File.read(save_file)) : {}
   @last_check = Date.today.freeze
 
   subscribe(:active_players__add).each do |name|
@@ -27,7 +28,7 @@ Plugin.create :continuous_login do
   daily_check(Date.today + 1)
 
   on_scan_continuous_login_bonus do |name|
-    counter[name] ||= {last: Date.today - 1, count: 0}
+    counter[name] ||= { last: Date.today - 1, count: 0 }
     if Date.today != counter[name][:last]
       counter[name][:last] = Date.today
       counter[name][:count] += 1
@@ -42,8 +43,7 @@ Plugin.create :continuous_login do
 
   on_give_continuous_login_bonus do |name, days|
     lore = "#{Time.now.year}/#{Time.now.month}/#{Time.now.day} 通算ログインボーナス\n#{days}日ログイン記念に#{name}がもらった"
-    case
-    when (days % 89) == 0
+    if (days % 89) == 0
       Plugin.call(:giftbox_keep_stack,
                   name,
                   "#{days}日記念！エリトラをプレゼント",
@@ -52,7 +52,7 @@ Plugin.create :continuous_login do
                       :elytra,
                       component: NBT.build({ lore: lore })
                     ), 1))
-    when (days % 31) == 0
+    elsif (days % 31) == 0
       Plugin.call(:giftbox_keep_stack,
                   name,
                   "#{days}日記念！シュルカーの殻をプレゼント",
@@ -61,7 +61,7 @@ Plugin.create :continuous_login do
                       :shulker_shell,
                       component: NBT.build({ lore: lore })
                     ), 1))
-    when (days % 17) == 0
+    elsif (days % 17) == 0
       Plugin.call(:giftbox_keep_stack,
                   name,
                   "#{days}日記念！アパ社長水をプレゼント",
@@ -72,7 +72,6 @@ Plugin.create :continuous_login do
                         { custom_name: 'アパ社長水', max_stack_size: 16 }
                       )
                     ), 1))
-    when (days % 9) == 0
       Plugin.call(:giftbox_keep_stack,
                   name,
                   "ログイン#{days}日目！メンマをプレゼント",
@@ -83,7 +82,7 @@ Plugin.create :continuous_login do
                         { custom_name: 'メンマ', food: { nutrition: 2, saturation: 2 } }
                       )
                     ), 1))
-    when (days % 7) == 0
+    elsif (days % 7) == 0
       Plugin.call(:giftbox_keep_stack,
                   name,
                   "#{days}日記念！アパ社長カレーをプレゼント",
@@ -94,7 +93,7 @@ Plugin.create :continuous_login do
                         { custom_name: 'アパ社長カレー', max_stack_size: 16 }
                       )
                     ), 1))
-    when (days % 5) == 0
+    elsif (days % 5) == 0
       Plugin.call(:giftbox_keep_stack,
                   name,
                   "#{days}日記念！石炭をプレゼント",
@@ -109,7 +108,8 @@ Plugin.create :continuous_login do
                       component: NBT.build(
                         { custom_name: 'うまい棒', food: { nutrition: 1, saturation: 2 } }
                       )
-                    ), 1))
+                    ), 1
+                  ))
     end
   end
 end

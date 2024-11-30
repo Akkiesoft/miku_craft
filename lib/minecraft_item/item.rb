@@ -34,6 +34,7 @@ class MinecraftItem::Item
   def max_stack_size
     [(@component&.dig(:max_stack_size) || ITEM_STACK[id]).to_i, 1].max
   end
+
   def tag = component
 
   # "item_id[component]" を返す
@@ -89,7 +90,7 @@ class MinecraftItem::Item
           # ↑の正規表現で雑に判定している。
           # リッチテキストフォーマットでない場合省略記法と判断し、リッチテキストフォーマット
           # にコンバートする。
-          @component = @component.cow(['custom_name'], [{text: name, italic: false}].to_json)
+          @component = @component.cow(['custom_name'], [{ text: name, italic: false }].to_json)
         end
       else
         @component = @component.cow(['custom_name'], name.to_json)
@@ -105,7 +106,7 @@ class MinecraftItem::Item
         # JSONにフォーマットし、それらをリストにする。
         @component = @component.cow(
           ['lore'],
-          NBT::NBTList.new(lore.to_s.each_line.map { [{text: _1.chomp, italic: false}].to_json })
+          NBT::NBTList.new(lore.to_s.each_line.map { [{ text: _1.chomp, italic: false }].to_json })
         )
       else
         updated = false
@@ -144,7 +145,7 @@ class MinecraftItem::Item
       updated = false
       filtered = attrs.to_enum.reject do |attr|
         case [attr[:amount].to_f, attr[:operation].to_s]
-        when [0, 'add_value'], [0, 'add_multiplied_total'], [1, 'add_multiplied_base']
+        when [0, 'add_value'], [0, 'add_multiplied_total'], [0, 'add_multiplied_base']
           updated = true
         end
       end
@@ -153,5 +154,4 @@ class MinecraftItem::Item
       end
     end
   end
-
 end

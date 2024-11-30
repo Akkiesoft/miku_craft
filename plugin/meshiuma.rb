@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 Plugin.create :meshiuma do
   # Symbol ... マッチしたreasonの第一引数
   # Pluggaloid::STREAM ... 以下のキーを持ったHash
@@ -24,20 +25,20 @@ Plugin.create :meshiuma do
     [:intentional_game_design, %r<(?<player>[A-Za-z0-9_]+) was killed by \[Intentional Game Design\]>],
     [:falling, %r<(?<player>[A-Za-z0-9_]+) hit the ground too hard>],
     [:falling, %r<(?<player>[A-Za-z0-9_]+) fell from a high place>],
-    [:falling, %r<(?<player>[A-Za-z0-9_]+) fell off a ladder>, {assailant: 'minecraft:ladder'}],
-    [:falling, %r<(?<player>[A-Za-z0-9_]+) fell off some weeping vines>, {assailant: 'minecraft:weeping_vines'}],
-    [:falling, %r<(?<player>[A-Za-z0-9_]+) fell off some twisting vines>, {assailant: 'minecraft:twisting_vine'}],
-    [:falling, %r<(?<player>[A-Za-z0-9_]+) fell off scaffolding>, {assailant: 'minecraft:scaffolding'}],
+    [:falling, %r<(?<player>[A-Za-z0-9_]+) fell off a ladder>, { assailant: 'minecraft:ladder' }],
+    [:falling, %r<(?<player>[A-Za-z0-9_]+) fell off some weeping vines>, { assailant: 'minecraft:weeping_vines' }],
+    [:falling, %r<(?<player>[A-Za-z0-9_]+) fell off some twisting vines>, { assailant: 'minecraft:twisting_vine' }],
+    [:falling, %r<(?<player>[A-Za-z0-9_]+) fell off scaffolding>, { assailant: 'minecraft:scaffolding' }],
     [:falling, %r<(?<player>[A-Za-z0-9_]+) fell while climbing>],
-    [:falling, %r<(?<player>[A-Za-z0-9_]+) was impaled on a stalagmite>, {assailant: 'minecraft:pointed_dripstone'}],
-    [:falling_block, %r<(?<player>[A-Za-z0-9_]+) was squashed by a falling anvil>, {assailant: 'minecraft:anvil'}],
+    [:falling, %r<(?<player>[A-Za-z0-9_]+) was impaled on a stalagmite>, { assailant: 'minecraft:pointed_dripstone' }],
+    [:falling_block, %r<(?<player>[A-Za-z0-9_]+) was squashed by a falling anvil>, { assailant: 'minecraft:anvil' }],
     [:falling_block, %r<(?<player>[A-Za-z0-9_]+) was squashed by a falling block>],
-    [:falling_block, %r<(?<player>[A-Za-z0-9_]+) was skewered by a falling stalactite>, {assailant: 'minecraft:dripstone'}],
+    [:falling_block, %r<(?<player>[A-Za-z0-9_]+) was skewered by a falling stalactite>, { assailant: 'minecraft:dripstone' }],
     [:flame, %r<(?<player>[A-Za-z0-9_]+) went up in flames>],
     [:flame, %r<(?<player>[A-Za-z0-9_]+) burned to death>],
     [:flame, %r<(?<player>[A-Za-z0-9_]+) was burnt to a crisp>],
     [:firework, %r<(?<player>[A-Za-z0-9_]+) went off with a bang>],
-    [:firework, %r<(?<player>[A-Za-z0-9_]+) went off with a bang due to a firework fired from (?<weapon_named>[^\s]+) by (?<assailant>[^\s]+)>, {weapon: 'minecraft:crossbow'}],
+    [:firework, %r<(?<player>[A-Za-z0-9_]+) went off with a bang due to a firework fired from (?<weapon_named>[^\s]+) by (?<assailant>[^\s]+)>, { weapon: 'minecraft:crossbow' }],
     [:lava, %r<(?<player>[A-Za-z0-9_]+) tried to swim in lava>],
     [:lightning, %r<(?<player>[A-Za-z0-9_]+) was struck by lightning>],
     [:magma, %r<(?<player>[A-Za-z0-9_]+) discovered the floor was lava>],
@@ -46,7 +47,7 @@ Plugin.create :meshiuma do
     [:magic, %r<(?<player>[A-Za-z0-9_]+) was killed by (?<assailant>[^\s]+) using magic>],
     [:magic, %r<(?<player>[A-Za-z0-9_]+) was killed by (?<assailant>[^\s]+) using (?<weapon_named>[^\s]+)>],
     [:twitter, %r<(?<player>[A-Za-z0-9_]+) was frozen to death>],
-    [:slain, %r<(?<player>[A-Za-z0-9_]+) was slain by (?<assailant>[^\s]+)>],
+    [:slain, %r<(?<player>[A-Za-z0-9_]+) was slain by (?<assailant>.+)>],
     [:fireball, %r<(?<player>[A-Za-z0-9_]+) was fireballed by (?<assailant>[^\s]+)>],
     [:bee, %r<(?<player>[A-Za-z0-9_]+) was stung to death>],
     [:wither, %r<(?<player>[A-Za-z0-9_]+) was shot by a skull from (?<assailant>[^\s]+)>],
@@ -59,7 +60,7 @@ Plugin.create :meshiuma do
     [:void, %r<(?<player>[A-Za-z0-9_]+) fell out of the world>],
     [:void, %r<(?<player>[A-Za-z0-9_]+) didn't want to live in the same world as (?<assailant>[^\s]+)>],
     [:wither_effect, %r<(?<player>[A-Za-z0-9_]+) withered away>],
-    [:else, %r<(?<player>[A-Za-z0-9_]+) died>],
+    [:else, %r<(?<player>[A-Za-z0-9_]+) died>]
   ]
 
   reasons.group_by { |(t, *)| t }.each do |target_type, tras|
@@ -67,7 +68,7 @@ Plugin.create :meshiuma do
     generate(:died, target_type) do |yielder|
       puts "subscribe #{tras.inspect}"
       subscribe(:server_raw_output, :stdout).each do |line|
-        matched, advices = tras.lazy.filter_map { |_, r, a = {}|
+        matched, advices = tras.lazy.filter_map { |_, r, a={}|
           r.match(line)&.then { [_1, a] }
         }.first
         if matched
@@ -81,11 +82,43 @@ Plugin.create :meshiuma do
     end
   end
 
-  subscribe(:died, :slain).each do |advice|
-    if advice[:assailant] == 'Zombie'
+  on_died do |_reason, advices|
+    advices.each do |advice|
       player = advice[:player]
-      Plugin.call(:minecraft_execute, player, "summon minecraft:zombie ~ ~ ~ {CustomName:'[{\"text\":\"#{player}\"}]',Glowing:1b,CanPickUpLoot:1b,PersistenceRequired:1b,ArmorItems:[{},{},{},{id:\"minecraft:player_head\",Count:1,tag:{SkullOwner:\"#{player}\"}}],ArmorDropChances:[0f,0f,0f,1.00f]}")
+      head = MinecraftItem::Stack.new(
+        MinecraftItem::Item.new(
+          :player_head,
+          component: NBT.build(
+            {
+              custom_name: "#{player}の頭",
+              lore: "#{Time.now.iso8601}\n#{player}が#{advice[:assailant]}に殺された記念",
+              profile: { name: player }
+            }
+          )
+        ), 1
+      )
+      case advice[:assailant]
+      when /Zombie/
+        Plugin.call(:summon_tombstone, player, 'minecraft:zombie', advice[:assailant], head)
+      when /Husk/
+        Plugin.call(:summon_tombstone, player, 'minecraft:husk', advice[:assailant], head)
+      when /Drowned/
+        Plugin.call(:summon_tombstone, player, 'minecraft:drowned', advice[:assailant], head)
+      when /Wither Skeleton/
+        Plugin.call(:summon_tombstone, player, 'minecraft:wither_skeleton', advice[:assailant], head)
+      when /Skeleton/
+        Plugin.call(:summon_tombstone, player, 'minecraft:skeleton', advice[:assailant], head)
+      when /Bogged/
+        Plugin.call(:summon_tombstone, player, 'minecraft:bogged', advice[:assailant], head)
+      when /Stray/
+        Plugin.call(:summon_tombstone, player, 'minecraft:stray', advice[:assailant], head)
+      end
     end
+  end
+
+  on_summon_tombstone do |player, mob_id, mob_name, head|
+    Plugin.call(:minecraft_execute, player,
+                "summon #{mob_id} ~ ~ ~ {CustomName:'[{\"text\":\"#{mob_name} of #{player}\"}]',Glowing:1b,CanPickUpLoot:1b,PersistenceRequired:1b,ArmorItems:[{},{},{},#{head.snbt}],ArmorDropChances:[0f,0f,0f,1.00f]}")
   end
 
   def matched_to_advice(base, *matches)
