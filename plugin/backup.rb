@@ -2,11 +2,11 @@ require 'time'
 
 Plugin.create :backup do
   time = nil
-  admin_user = "Hogehoge"
-  mc_map_path = "/path/to/EjectCraft"
-  ssh_cmd = "ssh -i /home/hoge/.ssh/id_ed25519"
-  ssh_dest = "hoge@another.server"
-  ssh_dest_dir = "minecraft/"
+  admin_user = ENV['backup_mc_admin_user']
+  mc_map_path = ENV['backup_mc_world_path']
+  ssh_user = (ENV['backup_ssh_user']) ? "#{ENV['backup_ssh_user']}@" : ""
+  ssh_dest = "#{ssh_user}#{ENV['backup_dest_addr']}"
+  ssh_dest_dir = ENV['backup_dest_dir']
 
   defevent :update_map, prototype: [Pluggaloid::COLLECT]
   defevent :server_raw_output, prototype: [Symbol, Pluggaloid::STREAM]
@@ -34,7 +34,7 @@ Plugin.create :backup do
         puts "Called update map!"
         Plugin.call(:minecraft_say, "Syncing map data to webserver")
         Plugin.call(:minecraft_save_off)
-        system("rsync -a --delete -e \"#{ssh_cmd}\" #{mc_map_path} #{ssh_dest}:#{ssh_dest_dir}")
+        system("rsync -a --delete #{mc_map_path} #{ssh_dest}:#{ssh_dest_dir}")
         Plugin.call(:minecraft_save_on)
         Plugin.call(:minecraft_say, "Sync map data successfully.")
       }
